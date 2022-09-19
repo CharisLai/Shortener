@@ -1,6 +1,10 @@
 // require packages used in the project
 const express = require('express')
+// require express-handlebars here
+const exphbs = require('express-handlebars')
 const mongoose = require('mongoose')
+const URL = require("./models/URL")
+
 const app = express()
 const port = 2000
 
@@ -13,17 +17,13 @@ db.once('open', () => {
   console.log('mongodb connected!')
 })
 
-
-// require express-handlebars here
-const exphbs = require('express-handlebars')
-
 // setting template engin
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
 // routes setting
 app.get('/', (req, res) => {
-  res.send('This is my shortener built with Express')
+  res.render('index')
 })
 
 // start and listen on the Express server
