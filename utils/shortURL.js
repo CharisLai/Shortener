@@ -1,7 +1,6 @@
 const character = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
 const MAX = 61
 const MIN = 0
-const usedShortURL= []
 
 module.exports = () => {
   let shortURL = ""

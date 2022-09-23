@@ -5,19 +5,11 @@
     <p id="shortURL" style="color:blue;">{{host}}/{{shortURL}}</p>
 
     <button class="btn btn-outline-success mt-3" onclick="copy()">Copy</button>
-
-    <script>
-      function copy() {
-        const URL = document.getElementById("shortURL")
-        navigator.clipboard.writeText(URL.innerText)
-          .then(() => alert('copied'))
-          .catch(error => console.log(error))
-      }
-    </script>
   </div>
   {{else}}
   <form action="/" method="POST">
-    <div class="container mt-5;" style="display:flex;
+    <div class="input-group md-3
+    mx-auto" style="display:flex;
     flex-direction:column;
     align-items:center; 
     text-align:center; color:blue; background:transparent;border:none">
@@ -29,3 +21,11 @@
   </form>
   {{/if}}
 </div>
+<script>
+  function copy() {
+    const URL = document.getElementById("shortURL")
+    navigator.clipboard.writeText(URL.innerText)
+      .then(() => alert('copied'))
+      .catch(error => console.log(error))
+  }
+</script>

@@ -16,7 +16,7 @@
 <li>執行專案，使用terminal輸入：<br><strong>npm run dev</strong></li>
 <li>輸入下列代碼於網址列即可使用：<br><strong>localhost:2000</strong></li>
 <li>暫停使用請按下<strong>ctrl+c</strong></li>
-<ol>
+</ol>
 
 <h3>開發者工具</h3>
 <ul>
