@@ -1,1 +1,31 @@
-<h2>Hello world! 這是 index</h2>
+<div class="container">
+  {{#if shortURL}}
+  <div class="shortURL" style="display:flex; align-items:center;flex-direction:column;">
+    <h3>Success! Please use this link:</h3>
+    <p id="shortURL" style="color:blue;">{{host}}/{{shortURL}}</p>
+
+    <button class="btn btn-outline-success mt-3" onclick="copy()">Copy</button>
+
+    <script>
+      function copy() {
+        const URL = document.getElementById("shortURL")
+        navigator.clipboard.writeText(URL.innerText)
+          .then(() => alert('copied'))
+          .catch(error => console.log(error))
+      }
+    </script>
+  </div>
+  {{else}}
+  <form action="/" method="POST">
+    <div class="container mt-5;" style="display:flex;
+    flex-direction:column;
+    align-items:center; 
+    text-align:center; color:blue; background:transparent;border:none">
+      <input id="originalURL" type="originalURL" name="originalURL" placeholder="Input URL here" required />
+    </div>
+    <div class="container mt-3" style="display:flex; align-items:center; flex-direction:column;">
+      <button class="btn btn-outline-primary" type="submit">Shorten</button>
+    </div>
+  </form>
+  {{/if}}
+</div>
